@@ -392,7 +392,152 @@ document.getElementById('four').addEventListener('click',function(){
 //   document.forms[0].submit();
 // }
 
-console.log(navigator.platform);
+//console.log(navigator.platform);
+
+
+//CLOSURE
+
+// let a=10;
+
+// function test (){
+//     let data = 10;
+//     console.log(a);
+// }
+// console.log(data);//data will be not here since data will only present in their lexical scope
+//  output like data is note define 
+// this problem resolve by closure
+
+
+// function check () {
+//     let data = 10;
+//     return function innerfunc(){
+//         return data*data;
+//     }
+// }
+
+// //console.log(check()());
+// //OR
+// let inner = check();
+// console.log(inner());//inner function able to remember the value data so now we can access lexical scope data;
+
+
+ //Multiple closure
+
+// function check1 () {
+//     let x=10;
+//     return function check2() {
+//         x=20;
+//         return function check3() {
+//             x=30;
+//             return x*x;
+//         }
+        
+        
+//      }
+   
+ 
+// }
+
+// console.log(check1()()());
+
+// function check1 () {
+//     let x=10;
+//     const check2 = function () {
+//        const check3 = function () {
+//           return x*x;
+//        }
+//        x=65;
+//        return check3;
+//     }
+//      x=29;
+//      return check2;
+// }
+
+// console.log(check1()()());
+
+
+// to realise the memory using closure
+
+// function check1 () {
+//     let a = 10;
+//     return function check2 () {
+//         a++;
+//         return a;
+//     }
+// }
+
+// let last = check1();
+// console.log(last());
+// console.log(last());
+// console.log(last());
+// console.log(last());
+
+
+// CallBack function
+
+
+// let students = [
+//     {name:"Anuj",class:"seven"},
+//     {name:"rahul",class:"six"},
+// ]
+
+// const StudentsEnrollment = (newStudent,CallBack) =>{
+//     setTimeout(() => {
+//         students.push(newStudent);
+//         CallBack();
+//     }, 3000);
+// }
+
+// const StudentenrollList = () =>{
+//     setTimeout(() => {
+//         let str = "";
+//         students.forEach((item)=>{
+//             str+=`<li>${item.name } class:- ${item.class}</li>`
+//         })
+
+//         document.getElementById('students').innerHTML=str;
+//     }, 1000);
+// }
+
+// let newStudent = {name:"Arav",class:"one"};
+
+// StudentsEnrollment(newStudent,StudentenrollList);
+
+
+// program to display time every 5 seconds
+
+// setInterval
+// function showTime() {
+
+//     // return new date and time
+//     let dateTime= new Date();
+
+//     // return the time
+//     let time = dateTime.toLocaleTimeString();
+
+//     document.write(time);
+    
+// }
+
+// let display = setInterval(showTime, 5000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

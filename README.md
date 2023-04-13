@@ -594,7 +594,205 @@ You can use below tools or techniques for debugging javascript
 
         No, they are entirely two different programming languages and have nothing to do with each other. But both of them are Object Oriented Programming languages and like many other languages, they follow similar syntax for basic features(if, else, for, switch, break, continue etc).
 
--->
+-->what is closuer?
+ A function with lexical scope is known as closure.
+
+ Example:
+  //CLOSURE
+
+// let a=10;
+
+// function test (){
+//     let data = 10;
+//     console.log(a);
+// }
+// console.log(data);//data will be not here since data will only present in their lexical scope
+//  output like data is note define 
+// this problem resolve by closure
+
+
+// function check () {
+//     let data = 10;
+//     return function innerfunc(){
+//         return data*data;
+//     }
+// }
+
+// //console.log(check()());
+// //OR
+// let inner = check();
+// console.log(inner());//inner function able to remember the value data so now we can access lexical scope data;
+
+
+ //Multiple closure
+
+// function check1 () {
+//     let x=10;
+//     return function check2() {
+//         x=20;
+//         return function check3() {
+//             x=30;
+//             return x*x;
+//         }
+        
+        
+//      }
+   
+ 
+// }
+
+// console.log(check1()()());
+
+// function check1 () {
+//     let x=10;
+//     const check2 = function () {
+//        const check3 = function () {
+//           return x*x;
+//        }
+//        x=65;
+//        return check3;
+//     }
+//      x=29;
+//      return check2;
+// }
+
+// console.log(check1()()());
+
+
+// to realise the memory using closure
+
+// function check1 () {
+//     let a = 10;
+//     return function check2 () {
+//         a++;
+//         return a;
+//     }
+// }
+
+// let last = check1();
+// console.log(last());
+// console.log(last());
+// console.log(last());
+// console.log(last());
+
+
+-------->>>>>>>> CallBack function <<<<<<<<<--------------------
+
+
+let students = [
+    {name:"Anuj",class:"seven"},
+    {name:"rahul",class:"six"},
+]
+
+const StudentsEnrollment = (newStudent,CallBack) =>{
+    setTimeout(() => {
+        students.push(newStudent);
+        CallBack();
+    }, 3000);
+}
+
+const StudentenrollList = () =>{
+    setTimeout(() => {
+        let str = "";
+        students.forEach((item)=>{
+            str+=`<li>${item.name } class:- ${item.class}</li>`
+        })
+
+        document.getElementById('students').innerHTML=str;
+    }, 1000);
+}
+
+let newStudent = {name:"Arav",class:"one"};
+
+StudentsEnrollment(newStudent,StudentenrollList);
+
+
+--.What are events?
+
+    Events are "things" that happen to HTML elements. When JavaScript is used in HTML pages, JavaScript can react on these events. Some of the examples of HTML events are,
+
+    Web page has finished loading
+    Input field was changed
+    Button was clicked
+
+-->Who created javascript
+    JavaScript was created by Brendan Eich in 1995 during his time at Netscape Communications. Initially it was developed under the name Mocha, but later the language was officially called LiveScript when it first shipped in beta releases of Netscape.
+
+-->What is the use of preventDefault method
+    The preventDefault() method cancels the event if it is cancelable, meaning that the default action or behaviour that belongs to the event will not occur. For example, prevent form submission when clicking on submit button and prevent opening the page URL when clicking on hyperlink are some common use cases.
+
+    document
+    .getElementById("link")
+    .addEventListener("click", function (event) {
+        event.preventDefault();
+    });
+
+
+--->What is the use of stopPropagation method
+    The stopPropagation method is used to stop the event from bubbling up the event chain. For example, the below nested divs with stopPropagation method prevents default event propagation when clicking on nested div(Div1)
+
+    <p>Click DIV1 Element</p>
+    <div onclick="secondFunc()">DIV 2
+    <div onclick="firstFunc(event)">DIV 1</div>
+    </div>
+
+    <script>
+    function firstFunc(event) {
+    alert("DIV 1");
+    event.stopPropagation();
+    }
+
+    function secondFunc() {
+    alert("DIV 2");
+    }
+    </script>
+
+-->What are the steps involved in return false usage
+    The return false statement in event handlers performs the below steps,
+
+    First it stops the browser's default action or behaviour.
+    It prevents the event from propagating the DOM
+    Stops callback execution and returns immediately when called.
+
+-->What is BOM
+    The Browser Object Model (BOM) allows JavaScript to "talk to" the browser. It consists of the objects navigator, history, screen, location and document which are children of the window. The Browser Object Model is not standardized and can change based on different browsers.
+
+-->What is the use of setTimeout
+    The setTimeout() method is used to call a function or evaluate an expression after a specified number of milliseconds. For example, let's log a message after 2 seconds using setTimeout method,
+
+    setTimeout(function () {
+    console.log("Good morning");
+    }, 2000);
+
+-->What is the use of setInterval
+    The setInterval() method is used to call a function or evaluate an expression at specified intervals (in milliseconds). For example, let's log a message after 2 seconds using setInterval method,
+
+    // setInterval
+// function showTime() {
+
+//     // return new date and time
+//     let dateTime= new Date();
+
+//     // return the time
+//     let time = dateTime.toLocaleTimeString();
+
+//     document.write(time);
+    
+// }
+
+// let display = setInterval(showTime, 5000);
+
+Why is JavaScript treated as Single threaded?
+    JavaScript is a single-threaded language. Because the language specification does not allow the programmer to write code so that the interpreter can run parts of it in parallel in multiple threads or processes. Whereas languages like java, go, C++ can make multi-threaded and multi-process programs.
+
+
+
+
+
+
+
+
+
 
 
 
