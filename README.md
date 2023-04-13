@@ -395,3 +395,133 @@ chicken = parcel;
 // console.log(obj);
 
 // console.log(user);// here function is not present
+
+ LET VAR and CONST
+
+var and let create variables that can be reassigned another value.
+const creates "constant" variables that cannot be reassigned another value.
+developers shouldn't use var anymore. They should use let or const instead.
+if you're not going to change the value of a variable, it is good practice to use const.
+
+KEYWORD	SCOPE	                    REDECLARATION & REASSIGNMENT	                      HOISTING
+var	Global, Local	                yes & yes	                                           yes,with default value
+let	Global, Local, Block	        no & yes	                                          yes, without default value
+const	Global, Local, Block	    no & no                                        	      yes, without default value
+
+var check = 35;
+let x = 23;
+
+{
+
+    var check = 3438;//global scope
+    let x = 56;//Block scope
+    console.log(x);
+}
+
+  console.log(check);
+  console.log(x);
+
+  Async And Await
+
+// await and Async Note:= await can only use with async;
+// (async function(){
+//     await Promise.resolve(console.log('Hello await')); // SyntaxError: await is only valid in async function
+// })()
+
+const check = async() => {
+    let res = await fetch ('https://jsonplaceholder.typicode.com/todos/1')
+    let data = res.json();
+
+    console.log(data);
+}
+
+check();
+
+
+-->What are global variables
+Global variables are those that are available throughout the length of the code without any scope. The var keyword is used to declare a local variable but if you omit it then it will become global variable
+
+msg = "Hello"; // var is missing, it becomes global variable
+
+
+-->What are the problems with global variables
+The problem with global variables is the conflict of variable names of local and global scope. It is also difficult to debug and test the code that relies on global variables.
+
+-->What is NaN property
+The NaN property is a global property that represents "Not-a-Number" value. i.e, It indicates that a value is not a legal number. It is very rare to use NaN in a program but it can be used as return value for few cases
+
+Math.sqrt(-1);
+parseInt("Hello");
+
+-->The isFinite() function is used to determine whether a number is a finite, legal number. It returns false if the value is +infinity, -infinity, or NaN (Not-a-Number), otherwise it returns true.
+
+isFinite(Infinity); // false
+isFinite(NaN); // false
+isFinite(-Infinity); // false
+
+isFinite(100); // true
+
+-->What is an event flow
+Event flow is the order in which event is received on the web page. When you click an element that is nested in various other elements, before your click actually reaches its destination, or target element, it must trigger the click event for each of its parent elements first, starting at the top with the global window object. There are two ways of event flow
+
+Top to Bottom(Event Capturing)
+Bottom to Top (Event Bubbling)
+⬆ Back to Top
+
+-->What is event bubbling
+Event bubbling is a type of event propagation where the event first triggers on the innermost target element, and then successively triggers on the ancestors (parents) of the target element in the same nesting hierarchy till it reaches the outermost DOM element.
+
+⬆ Back to Top
+
+-->What is event capturing
+Event capturing is a type of event propagation where the event is first captured by the outermost element, and then successively triggers on the descendants (children) of the target element in the same nesting hierarchy till it reaches the innermost DOM element.
+
+// Bubbling phase
+
+document.getElementById('one').addEventListener('click',function(){
+    console.log("one");
+},false)
+document.getElementById('two').addEventListener('click',function(){
+    console.log("two");
+},false)
+document.getElementById('three').addEventListener('click',function(){
+    console.log("three");
+},false)
+document.getElementById('four').addEventListener('click',function(){
+    console.log("four");
+},false)
+
+//Capture Phase
+document.getElementById('one').addEventListener('click',function(){
+    console.log("one");
+},true)
+document.getElementById('two').addEventListener('click',function(){
+    console.log("two");
+},true)
+document.getElementById('three').addEventListener('click',function(){
+    console.log("three");
+},true)
+document.getElementById('four').addEventListener('click',function(){
+    console.log("four");
+},true)
+
+
+//How do you submit a form using JavaScript
+//You can submit a form using document.forms[0].submit(). All the form input's information is submitted using onsubmit event handler
+
+// function submit() {
+//   document.forms[0].submit();
+// }
+
+
+-->How do you find operating system details
+The window.navigator object contains information about the visitor's browser OS details. Some of the OS properties are available under platform property,
+
+console.log(navigator.platform);
+
+
+
+-->How do you find operating system details
+The window.navigator object contains information about the visitor's browser OS details. Some of the OS properties are available under platform property,
+
+console.log(navigator.platform);

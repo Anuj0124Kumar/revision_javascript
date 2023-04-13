@@ -314,6 +314,91 @@
 // console.log(user);// here function is not present
 
 
+//iifE
+
+// (function(){
+//     var a=b=3;//  describe b=3;// global scope
+//    // var a = 3;// block scope
+// })()
+
+// console.log((typeof (a)));//Und
+// console.log((typeof (b)));//number
+
+// VAR LET and Const
+
+// var check = 35;
+// let x = 23;
+
+// {
+
+//     var check = 3438;//global scope
+//     let x = 56;//Block scope
+//     console.log(x);
+// }
+
+//   console.log(check);
+//   console.log(x);
+
+// await and Async Note:= await can only use with async;
+// (async function(){
+//     await Promise.resolve(console.log('Hello await')); // SyntaxError: await is only valid in async function
+// })()
+
+// const check = async() => {
+//     let res = await fetch ('https://jsonplaceholder.typicode.com/todos/1')
+//     let data = res.json();
+
+//     console.log(data);
+// }
+
+// check();
+
+//console.log(isFinite(4.5));
+
+// Bubbling phase
+
+document.getElementById('one').addEventListener('click',function(){
+    console.log("one");
+},false)
+document.getElementById('two').addEventListener('click',function(){
+    console.log("two");
+},false)
+document.getElementById('three').addEventListener('click',function(){
+    console.log("three");
+},false)
+document.getElementById('four').addEventListener('click',function(){
+    console.log("four");
+},false)
+
+//Capture Phase
+document.getElementById('one').addEventListener('click',function(){
+    console.log("one");
+},true)
+document.getElementById('two').addEventListener('click',function(){
+    console.log("two");
+},true)
+document.getElementById('three').addEventListener('click',function(){
+    console.log("three");
+},true)
+document.getElementById('four').addEventListener('click',function(){
+    console.log("four");
+},true)
+
+
+// How do you submit a form using JavaScript
+// You can submit a form using document.forms[0].submit(). All the form input's information is submitted using onsubmit event handler
+
+// function submit() {
+//   document.forms[0].submit();
+// }
+
+console.log(navigator.platform);
+
+
+
+
+
+
 
 
 

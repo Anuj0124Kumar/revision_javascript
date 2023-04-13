@@ -1,0 +1,21 @@
+#one{
+    background-color: blue;
+    width:450px;
+    height:450px;
+}
+#two{
+    background-color:green;
+    width:350px;
+    height:350px;
+}
+#three{
+    background-color:cyan;
+    width:250px;
+    height:250px;
+}
+
+#four{
+    background-color:white;
+    width:150px;
+    height:150px;
+}
