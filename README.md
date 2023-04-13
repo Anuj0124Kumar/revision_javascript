@@ -525,3 +525,77 @@ console.log(navigator.platform);
 The window.navigator object contains information about the visitor's browser OS details. Some of the OS properties are available under platform property,
 
 console.log(navigator.platform);
+
+-->What is the difference between native, host and user objects
+Native objects are objects that are part of the JavaScript language defined by the ECMAScript specification. For example, String, Math, RegExp, Object, Function etc core objects defined in the ECMAScript spec. Host objects are objects provided by the browser or runtime environment (Node). For example, window, XmlHttpRequest, DOM nodes etc are considered as host objects. User objects are objects defined in the javascript code. For example, User objects created for profile information.
+
+⬆ Back to Top
+
+-->What are the tools or techniques used for debugging JavaScript code
+You can use below tools or techniques for debugging javascript
+
+    Chrome Devtools
+    debugger statement
+    Good old console.log statement
+
+-->What are the pros and cons of promises over callbacks
+        Below are the list of pros and cons of promises over callbacks,
+
+        Pros:
+
+        It avoids callback hell which is unreadable
+        Easy to write sequential asynchronous code with .then()
+        Easy to write parallel asynchronous code with Promise.all()
+        Solves some of the common problems of callbacks(call the callback too late, too early, many times and swallow errors/exceptions)
+        Cons:
+
+        It makes little complex code
+        You need to load a polyfill if ES6 is not supported
+
+-->What is the difference between an attribute and a property?
+
+        Attributes are defined on the HTML markup whereas properties are defined on the DOM. For example, the below HTML element has 2 attributes type and value,
+
+        <input type="text" value="Name:">
+        You can retrieve the attribute value as below,
+
+        const input = document.querySelector("input");
+        console.log(input.getAttribute("value")); // Good morning
+        console.log(input.value); // Good morning
+        And after you change the value of the text field to "Good evening", it becomes like
+
+        console.log(input.getAttribute("value")); // Good evening
+        console.log(input.value); // Good evening
+
+
+-->What is the purpose of void 0 ?
+
+        Void(0) is used to prevent the page from refreshing. This will be helpful to eliminate the unwanted side-effect, because it will return the undefined primitive value. It is commonly used for HTML documents that use href="JavaScript:Void(0);" within an <a> element. i.e, when you click a link, the browser loads a new page or refreshes the same page. But this behavior will be prevented using this expression. For example, the below link notify the message without reloading the page
+
+        <a href="JavaScript:void(0);" onclick="alert('Well done!')">
+        Click Me!
+        </a>
+
+        OR
+
+        <a href="www.google.Googlecom">Google</a><br>
+        <a href="#">no Redirect to other page just move top of the page</a><br>
+        <a href="JavaScript:void(0)">no Redirect to other page just stuck on same position</a>
+
+-->Is JavaScript a compiled or interpreted language?
+
+        JavaScript is an interpreted language, not a compiled language. An interpreter in the browser reads over the JavaScript code, interprets each line, and runs it. Nowadays modern browsers use a technology known as Just-In-Time (JIT) compilation, which compiles JavaScript to executable bytecode just as it is about to run.
+
+-->Is JavaScript a case-sensitive language?
+
+    Yes, JavaScript is a case sensitive language. The language keywords, variables, function & object names, and any other identifiers must always be typed with a consistent capitalization of letters.
+
+-->Is there any relation between Java and JavaScript ?
+
+        No, they are entirely two different programming languages and have nothing to do with each other. But both of them are Object Oriented Programming languages and like many other languages, they follow similar syntax for basic features(if, else, for, switch, break, continue etc).
+
+-->
+
+
+
+
