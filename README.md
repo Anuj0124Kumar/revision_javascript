@@ -786,6 +786,174 @@ Why is JavaScript treated as Single threaded?
     JavaScript is a single-threaded language. Because the language specification does not allow the programmer to write code so that the interpreter can run parts of it in parallel in multiple threads or processes. Whereas languages like java, go, C++ can make multi-threaded and multi-process programs.
 
 
+//problem in callback
+
+
+// function check1 (name) {
+//     setTimeout(() => {
+//         console.log("inside first check1");
+//        return name;
+//     }, 1000);
+//  }
+//  console.log("start");
+//  let nm = check1("Pushpa")
+//  console.log(nm);//problem getting Undefine
+//  console.log("End");
+
+//Problem resolve using callback
+
+//  function check2 (name,callback) {
+//     setTimeout(() => {
+//         console.log("inside first check1");
+//         callback(name);
+//     }, 1000);
+//  }
+
+// let nm = check2("Pushpa",((nm)=>console.log(nm)))//second argument is callback function
+
+
+
+ // callBack hell problem in callback
+
+//  function check3 (name,callback) {
+//     setTimeout(() => {
+//         console.log("inside check3");
+//         callback(name)
+//     }, 1000);
+//  }
+//  function check4(name,callback){
+//     setTimeout(() => {
+//         console.log("inside check 4");
+//         callback(["cricket","Hockey","Football"])
+//     }, 1000);
+//  }
+
+// let nm = check3("Srvalli",((nm)=>{console.log(nm);check4(nm,((hobby)=>{console.log(hobby);})) }));
+
+// callback hell problem resolve by Promises
+
+//Basic of Promise
+
+// let promise = new Promise ((resolve,reject)=>{
+//      let flag = 10;
+//     if(flag%2 == 0){
+//         resolve("Victory")
+//     }
+//     else{
+//         reject("defeat")
+//     }
+// }).then(
+//     (value)=>{console.log(value);},
+//     //(error)=>{console.log(error);}
+// ).catch((error)=>{
+//     console.log(error);
+// }).finally(()=>{console.log("complete");})
+
+
+ 
+//Promise chaining
+
+// let promise = new Promise ((resolve,reject)=>{
+//     let flag = 10;
+//    if(flag%2 == 0){
+//        resolve(flag)
+//    }
+//    else{
+//        reject("defeat")
+//    }
+// }).then((value)=>{
+//     console.log(value);
+//     return value+10;
+// }).then((data)=>{
+//     console.log(data);
+// }).catch((error)=>{
+//     console.log(error);
+// }).finally(()=>{
+//     console.log("completed");
+// })
+
+
+// call back resolve
+
+
+// function getname (name) {
+//     return new Promise ((resolve,reject)=>{
+//         setTimeout(()=>{
+//             resolve(name);
+//         },2000)
+//     })
+// }
+
+// function getHobbies (name) {
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(() => {
+//             resolve(["Kabadi","KhoKho","Cricket"])
+//         }, 4000);
+//     })
+// }
+
+// getname("PushpaRise").then((nm)=>
+//      getHobbies(nm)
+// ).then((data)=>{
+//     console.log(data);
+// })
+
+
+//Async Await
+
+// function getname (name) {
+//     return new Promise ((resolve,reject)=>{
+//         setTimeout(()=>{
+//             resolve(name);
+//         },2000)
+//     })
+// }
+
+// function getHobbies (name) {
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(() => {
+//             resolve(["Kabadi","KhoKho","Cricket"])
+//         }, 4000);
+//     })
+// }
+
+// async function callFunc() {
+//     try {
+
+//         const nm = await getname("Pushpa2")
+//         const hobby = await getHobbies(nm);
+
+//         console.log(hobby);
+        
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
+
+// callFunc();
+
+
+// event LooP
+
+// webApi, AudioApi, ThirdPartyApi
+
+//Call stack ----> WebApi------>Event Queue--------->Event loop------->Call stack
+
+ function func2 () {
+   setTimeout(() => {//Call stack ----> WebApi------>Event Queue--------->Event loop------->Call stack
+    console.log("Function2");
+   }, 5000);
+ }
+
+ function func1 () {
+    console.log("Function1 Start");
+
+    func2();
+
+    console.log("Function1 end");
+ }
+
+ func1();
 
 
 
