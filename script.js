@@ -678,28 +678,67 @@ document.getElementById('four').addEventListener('click',function(){
 
 //Call stack ----> WebApi------>Event Queue--------->Event loop------->Call stack
 
- function func2 () {
-   setTimeout(() => {//Call stack ----> WebApi------>Event Queue--------->Event loop------->Call stack
-    console.log("Function2");
-   }, 5000);
- }
+//  function func2 () {
+//    setTimeout(() => {//Call stack ----> WebApi------>Event Queue--------->Event loop------->Call stack
+//     console.log("Function2");
+//    }, 5000);
+//  }
 
- function func1 () {
-    console.log("Function1 Start");
+//  function func1 () {
+//     console.log("Function1 Start");
 
-    func2();
+//     func2();
 
-    console.log("Function1 end");
- }
+//     console.log("Function1 end");
+//  }
 
- func1();
+//  func1();
 
  // Currying Apply Bind  excutionContext this
 
 
+   //simple currying
+
+
+//   function sum (a) {
+//     return function (b){
+//         return function (c) {
+//             return function (d) {
+//                 return a+b+c+d;
+//             }
+//         }
+//     }
+//   }
+
+//  console.log(sum(4)(3)(6)(7));
+
+ // using fat arrow function
+
+//   const sum = (a) => (b) => (c) => (d) => a+b+c+d;
+
+//   console.log(sum(4)(3)(6)(7));
 
 
 
+//Infinite curring 
+
+// function add(a){
+//     return function (b) {
+//         if(b){
+//            return add(a+b);
+//         }
+//         else{
+//             return a;
+//         }
+//     }
+// }
+
+// console.log(add(24)(23)(56)(23)(12)(34)(100)(24)(23)(56)(23)(12)(34)(100)());
+
+
+
+
+// CALL APPLY BIND
 
 
 
