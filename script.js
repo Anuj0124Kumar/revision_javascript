@@ -113,11 +113,11 @@
 
 // let modefiedArr = arr1.map(item=> item);
 
-// console.log(modefiedArr);
+// console.log(modefiedArr+" "+arr1);
 
 // let againModified = arr2.map(item=> item*3)
 
-// console.log(againModified);
+// console.log(againModified+" "+arr2);
 
 //FILTER
 // let arr1= ["Anuj","Ravi","Rani","Sunder"];
@@ -128,25 +128,25 @@
 //      return item === 'Sunder';
 // })
 
-// console.log(newFilter);
+// console.log(newFilter+" "+arr1);
 
 // let againFilter = arr2.filter((item)=>{
 //     return item%2 === 0;
 // })
 
-// console.log(againFilter);
+//console.log(againFilter);
 
 //REDUCE
 
-// let arr1= ["Anuj","Ravi","Rani","Sunder"];
-// let arr2=[2,4,5,89,67,89];
+//  let arr1= ["Anuj","Ravi","Rani","Sunder"];
+//  let arr2=[2,4,5,89,67,89];
 
 // let ModifiedReduce = arr1.reduce((accu,curr)=>{
 //       accu+=curr;
 //       return accu;
 // },"")
 
-// console.log(ModifiedReduce);
+// console.log(ModifiedReduce+" "+arr1);
 
 
 // let againFilter = arr2.reduce((accu,curr)=>{
@@ -357,32 +357,32 @@
 
 // Bubbling phase
 
-document.getElementById('one').addEventListener('click',function(){
-    console.log("one");
-},false)
-document.getElementById('two').addEventListener('click',function(){
-    console.log("two");
-},false)
-document.getElementById('three').addEventListener('click',function(){
-    console.log("three");
-},false)
-document.getElementById('four').addEventListener('click',function(){
-    console.log("four");
-},false)
+// document.getElementById('one').addEventListener('click',function(){
+//     console.log("one");
+// },false)
+// document.getElementById('two').addEventListener('click',function(){
+//     console.log("two");
+// },false)
+// document.getElementById('three').addEventListener('click',function(){
+//     console.log("three");
+// },false)
+// document.getElementById('four').addEventListener('click',function(){
+//     console.log("four");
+// },false)
 
-//Capture Phase
-document.getElementById('one').addEventListener('click',function(){
-    console.log("one");
-},true)
-document.getElementById('two').addEventListener('click',function(){
-    console.log("two");
-},true)
-document.getElementById('three').addEventListener('click',function(){
-    console.log("three");
-},true)
-document.getElementById('four').addEventListener('click',function(){
-    console.log("four");
-},true)
+// //Capture Phase
+// document.getElementById('one').addEventListener('click',function(){
+//     console.log("one");
+// },true)
+// document.getElementById('two').addEventListener('click',function(){
+//     console.log("two");
+// },true)
+// document.getElementById('three').addEventListener('click',function(){
+//     console.log("three");
+// },true)
+// document.getElementById('four').addEventListener('click',function(){
+//     console.log("four");
+// },true)
 
 
 // How do you submit a form using JavaScript
@@ -739,6 +739,904 @@ document.getElementById('four').addEventListener('click',function(){
 
 
 // CALL APPLY BIND
+
+// let student ={
+//     name:"anuj",
+//     lastName:"Kumar",
+//     getgamil:function(){
+//           return `${this.name}.${this.lastName}@gmail.com`
+//     }
+// }
+
+// let teacher = {
+//     name:"Ashish",
+//     lastName:"Kumar",
+//     getgamil:function(){
+//         return `${this.name}.${this.lastName}@gmail.com`
+//   }
+// }
+
+// console.log(student.getgamil());
+// console.log(teacher.getgamil());
+
+// this keyword
+// withOut arrow function
+//  const newObj ={
+//     name : "Rohit",
+//     student: function(){
+//         console.log(`my name is ${this.name}`);
+//     }
+//  }
+
+//  //newObj.student();
+
+//  let check = newObj.student;
+//  window.name="Raja";
+
+//  check();
+
+
+ // now with arrow function
+// window.name= "";
+//  const newObj ={
+//     name : "Rohit",
+//     student: () =>{
+//         console.log(`my name is ${this.name}`);
+//     }
+//  }
+//  window.name="Raja";
+//  newObj.student();
+
+// //  let check = newObj.student;
+// //  window.name="Raja";
+
+// //  check();
+
+// // function getgamil (name,lastName) {
+// //       console.log(`${name}.${lastName}@gmail.com`);
+// // }
+
+
+// // let student ={
+// //     name:"anuj",
+// //     lastName:"Kumar",
+// //     getgamil:getgamil(this.name,this.lastName)
+// // }
+
+
+// // let teacher = {
+// //     name:"Ashish",
+// //     lastName:"Kumar",
+// //     getgamil:function(){
+// //         getdetails(this)
+// //   }
+// // }
+
+// // //console.log(student.getgamil());
+// // console.log(teacher.getgamil());
+
+
+// let x =10;
+
+
+// var y = 25;// 
+
+// function add () {
+// let x = 20;
+// var y = 30;
+
+//     console.log(x+" "+y);
+// }
+
+// add();
+// console.log(x+" "+y);
+
+
+
+// function check (flag){
+    
+//     return new Promise((resolve,reject)=>{
+//         if(flag%2==0){
+//             resolve(flag);
+//         }
+//         else{
+//             reject(0);
+//         }
+//     })
+// }
+
+// check(10).then((value)=>{
+//     console.log(value);
+//     return (value*30)
+// }).then((data)=>{
+//     console.log(data);
+// }).catch((error)=>{
+//     console.log(error);
+// })
+
+
+//slice and splice 
+
+// let arr = ['Anuj','ravi','Rani'];
+
+
+
+// let newArray = arr.slice(0,2);
+
+// console.log(newArray);// ['Anuj','ravi'];
+
+// let spliceArray = arr.splice(0,2);
+
+// console.log(spliceArray);//['Anuj','ravi'];
+// console.log(arr);//['Rani']
+
+
+
+// let arr = [1,2,3,4,5,6];
+
+// let PopItem = arr.pop();
+
+// console.log(PopItem);//6
+// console.log(arr);[1,2,3,4,5]
+
+// let PushItem = arr.push(7);
+
+// console.log(PushItem);//6th item
+// console.log(arr);//[1,2,3,4,5,7]
+
+
+// difference between === and ==
+
+// 0 == false   // true
+// 0 === false  // false
+// 1 == "1"     // true
+// 1 === "1"    // false
+// null == undefined // true
+// null === undefined // false
+// '0' == false // true
+// '0' === false // false
+// []==[] or []===[] //false, refer different objects in memory
+// {}=={} or {}==={} //false, refer different objects in memory
+
+
+
+// const LamdaArrowFunction = (num=> num%2)
+
+
+// console.log(LamdaArrowFunction(25));
+
+//first order function which does not take any argument and also does not return any value
+
+// let handel = () =>{
+//     console.log("Pushpa jhukega nahi");
+// }
+
+// handel();
+
+
+//Higher Order Function
+
+// const secondFunction = () =>{
+//     console.log("Higher Order function");
+// }
+
+// const firstFunction = (callFunction) =>{
+//     callFunction();
+// }
+// firstFunction(secondFunction);
+
+//currying
+
+// function checkCurring(a){
+
+//     return function (b){
+//         return a*b;
+//     }
+// }
+
+//   let pass = checkCurring(10);
+
+//   console.log(pass);
+
+//   console.log(pass(20));
+
+
+//infinite curring
+
+// function checkAgain(a){
+
+//     return function (b){
+//         if(b){
+//             return checkAgain(a+b);
+//         }
+//         else{
+//                return a;
+//         }
+//     }
+// }
+
+// console.log(checkAgain(10)(200)(234)(1115)());
+
+
+//fat arrow function currying
+
+// const checkAgain = (a)=>(b)=>(c)=> a+b+c;
+
+// console.log(checkAgain(1)(2)(30));
+
+
+//let var const
+
+// let count = 30;
+// var count1 = 30;
+
+// if(count == 30){
+//     let count = 31;
+//     console.log(count);//it is inside block scope
+//     count1 = 35;
+// }
+
+// console.log(count);
+// console.log(count1);//global scope
+
+
+// function add(pushpa){
+
+//     if(pushpa){
+//         let second = 10;
+//         var check = 20;
+//         console.log(check);
+//         console.log(second);
+//     }
+//     //console.log(second);
+//     console.log(check);
+// }
+
+// add(true);
+
+// we can not declear let again but in case var we can do 
+
+// let x = 10;
+
+// let x = 20;// redeclearing giving error 
+
+// var x =10;
+// var x = 20;// it is not giving error
+
+// const x =10;
+//  x= 20;// we can't change the constant value
+
+// console.log(x);
+
+// let x =10;
+
+
+
+
+//closure
+
+
+// function check(){
+//     let data =10;
+//     return function(){
+//         return  data;
+//     }
+// }
+
+// let op = check();
+
+// console.log(op());
+
+//another Example
+
+// function first(){
+//    let x=10;
+//     function second(){
+//         y=30;
+      
+//         function third(){
+//             z = 60;
+//             console.log( x+y+z);
+//         }
+//        let z =50;
+//        third();
+//     }
+//     let y=20;
+//     second();
+// }
+
+// first();
+
+
+// callback
+
+
+// function Pushpa(name,callback){
+//     setTimeout(() => {
+//         callback (name);
+//     }, 1000);
+// }
+// console.log("start");
+//  Pushpa('srivalli',((nm)=>{console.log(nm)}));
+// console.log("end");
+
+//callback hell
+
+// function PushpaRise(name,callback){
+
+//     setTimeout(() => {
+//         callback (name);
+//     }, 1000);
+// }
+
+// function PushaThree(name,callback){
+//     setTimeout(() => {
+//         callback (["Raja","Sadi","Tadi"])
+//     }, 2000);
+// }
+
+// console.log("start");
+
+// PushpaRise("srivalli",((nm)=>{console.log(nm),PushaThree(nm,((hobbi)=>{console.log(hobbi)}))}))
+
+
+//resolve  by Promise
+
+
+//  function Pushpa(name){
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(() => {
+//             resolve(name);
+//         }, 1000);
+//     })
+//  }
+
+//  Pushpa("srivalli").then((value)=>{
+//     console.log(value);
+//  }).catch((error)=>{
+//     console.log(error);
+//  })
+
+
+// function pushparise(name){
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(()=>{
+//             resolve(name);
+//         })
+//     })
+// }
+// // then Promise chaining problem
+// function pushpaTwo(name){
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(() => {
+//             resolve(['Kbaaddi','Cricket','ravan']);
+//         }, 2000);
+//     })
+// }
+
+// pushparise("srivalli").then((value)=>
+//     pushpaTwo(value)
+// ).then((data)=>{
+//     console.log(data);
+// }).catch((error)=>{
+//     console.log(error);
+// })
+
+//resolve async await
+
+
+// function pushpaAgain(name){
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(() => {
+//             resolve (name);
+//         }, 1000);
+//     })
+// }
+
+// function Hobbies(name){
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(() => {
+//             resolve (['Kbaaddi','Cricket','ravan']);
+//         }, 2000);
+//     })
+// }
+
+
+// (async function test () {
+
+//     let value = await pushpaAgain("srivalli");
+//     let data = await Hobbies(value);
+
+//     console.log(data);
+// })();
+
+
+// function PushpaAgain (data) {
+//     return new Promise ((resolve,reject)=>{
+//         setTimeout(() => {
+//             resolve(data);
+//         }, 1000);
+//     })
+// }
+
+
+// PushpaAgain(13).then((value)=>{
+//     console.log(value);
+//     return value*10;
+// }).then((data)=>{
+//     console.log(data);
+//     return 25*data;
+// }).then((val)=>{
+//     console.log(val);
+// }).catch((error)=>{
+//     console.log(error);
+// })
+
+
+// let promise1 = Promise.resolve(3);
+// let promise2 = new Promise((resolve,reject)=>{
+//     setTimeout(() => {
+//         resolve (28);
+//     }, 7000);
+// })
+// let promise3 = new Promise((resolve,reject)=>{
+//     setTimeout(() => {
+//         resolve (25);
+//     }, 5000);
+// })
+
+// Promise.all([promise1,promise3,promise2]).then((data)=>{
+//     console.log(data);
+// })
+
+
+// Promise.race([promise1,promise3,promise2]).then((data)=>{
+//     console.log(data);
+// })
+
+
+var msg;
+// function greeting() {
+//    alert('Good morning');
+// }
+// function start() {
+//   msg =setTimeout(greeting, 3000);
+
+// }
+
+// function stop() {
+//     clearTimeout(msg);
+// }
+// start();
+// stop();
+
+
+// function redirect() {
+//     window.location.href = "index.html";
+//   }
+
+//Arguments
+
+
+// function sum(){
+//     let total =0;
+//     for(let i=0; i<arguments.length; i++){
+//        total+=arguments[i];
+//     }
+//     return total;
+// }
+
+// console.log(sum(1,2,3));
+
+// make first letter uppercase
+
+// function upperca(str){
+     
+//     return str.charAt(0).toUpperCase()+str.slice(1);
+// }
+
+// console.log(upperca("anuj"));
+
+
+// var today = new Date();
+// var dd = String(today.getDate()).padStart(2, "0");
+// var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+// var yyyy = today.getFullYear();
+
+// today = mm + "/" + dd + "/" + yyyy;
+// document.write(today);
+
+
+// let str = "  Anuj you are great    "
+
+// console.log(str);
+
+
+// str = str.trim(str);
+
+// console.log(str);
+
+
+// let str = "Anuj you are best";
+
+// let arr = str.split(" ");
+
+// console.log(arr);
+
+
+// const check = sum =>
+//      sum/2;
+
+
+// const add=num=> num/20;
+
+// console.log(check(20));
+
+// console.log(add(30));
+
+// let arr = [12,3,4,5,6];
+
+// let result = arr.reduce((curr,acc)=>{
+//     return acc+=curr;
+// })
+
+// console.log(result);
+
+
+// let userDetails = {
+//     name:"Pushpa",
+//     age:32,
+//     work:"actor",
+//     details:function(){
+//         console.log(`${this.name} is working as ${this.work} and age is ${this.age}`);
+//     }
+// } 
+
+// userDetails.details();
+
+// let userdeatils2 ={
+//     name:"srivalli",
+//     age:26,
+//     work:"actoress"
+// }
+
+// userDetails.details.call(userdeatils2);
+
+
+// but i want to make my details function independent to other object
+
+// let userDetails = {
+//     name:"Pushpa",
+//     age:32,
+//     work:"actor",
+// } 
+
+// function details(){
+//     console.log(`${this.name} is working as ${this.work} and age is ${this.age}`);
+// }
+
+// details.call(userDetails);
+
+// let userdeatils2 ={
+//     name:"srivalli",
+//     age:26,
+//     work:"actoress"
+// }
+
+// details.call(userdeatils2);
+
+
+// apply 
+
+
+// let userDetails = {
+//     name:"Pushpa",
+//     age:32,
+//     work:"actor",
+// } 
+
+// function details(state,country){
+//     console.log(`${this.name} is working as ${this.work} and age is ${this.age} from ${state} ${country}`);
+// }
+
+// details.call(userDetails);
+
+// let userdeatils2 ={
+//     name:"srivalli",
+//     age:26,
+//     work:"actoress"
+// }
+
+// details.call(userdeatils2,"Andhra pradesh","india");
+// details.apply(userdeatils2,["Jharkhand","India"]);
+
+
+// bind
+
+// let userDetails = {
+//     name:"Pushpa",
+//     age:32,
+//     work:"actor",
+// } 
+
+// function details(state,country){
+//     console.log(`${this.name} is working as ${this.work} and age is ${this.age} from ${state} ${country}`);
+// }
+
+// details.call(userDetails);
+
+// let userdeatils2 ={
+//     name:"srivalli",
+//     age:26,
+//     work:"actoress"
+// }
+
+// details.call(userdeatils2,"Andhra pradesh","india");
+// details.apply(userdeatils2,["Jharkhand","India"]);
+
+// let print = details.bind(userDetails,"TamilNadu","India");
+
+// console.log(print);
+
+// print();
+
+
+//this Keyword
+
+// it is with simple function
+
+// const Alluarjun={
+//     name:"Pushpa",
+//     age:32,
+//     dialogue:"jhukega nahi",
+//     next: function(){
+//        return (`${this.name} ${this.name} raj ${this.dialogue}`);
+//     }
+// }
+
+//  console.log(Alluarjun.next());//pushpa Pushpa raj jhukega nahi
+
+
+// let check = Alluarjun.next;
+
+// window.name="anuj"
+// window.dialogue="jhukega nahi sala"
+
+// console.log(check());//anuj anuj jhukega nahi sala
+
+// with nested object
+
+// const Alluarjun = {
+//     name:"Pushpa",
+//     age:45,
+//     again:{
+//        name:"ravi",
+//         checkAgain : function(){
+//            console.log(this.name);
+//         }
+//     }
+// }
+
+
+// Alluarjun.again.checkAgain();//ravi
+
+
+// let check = Alluarjun.again.checkAgain;
+// check();//anuj
+
+
+//object function object
+
+
+// const pushpa = {
+
+//     name: "Srivalli",
+
+//     getName(){
+//         const name = "Pushpa Bhaau"
+//         return this.name;
+//     }
+
+// }
+
+// console.log(pushpa.getName());// Srivalli
+
+
+//with fat arrow function
+
+
+// const pushpa = {
+//     name :"srivalli",
+//    check : ()=>{
+//       return (`${this.name}`);
+//    }
+
+//  }
+
+//  console.log(pushpa.check());// window object
+
+
+//  const PushpaRise = {
+//     name : "Nayantara",
+//     check :{
+//         checkAgain:()=>{
+//             return (`${this.name}`)
+//         }
+       
+//     }
+//  }
+
+//  console.log(PushpaRise.check.checkAgain());// window object // Anuj
+
+
+// const Pushpa = {
+//     name:"Srivalli",
+//     check(){
+//        const nested = () =>
+//            console.log(this.name);
+
+//            nested();
+       
+//     },
+// }
+
+//Pushpa.check();
+
+//Spread operator
+
+// function add (x = 5,y=10,...args){
+//     let total = x+y;
+//     for(let i =0 ; i<args.length; i++){
+//         total+=args[i];
+//     }
+//     return total;
+// }
+
+// console.log(add(1,2,3,5,6,7));
+
+
+// const myVehicle = {
+//     brand: 'Ford',
+//     model: 'Mustang',
+//     color: 'red'
+//   }
+  
+//   const updateMyVehicle = {
+//     type: 'car',
+//     year: 2021, 
+//     color: 'yellow'
+//   }
+  
+//   const myUpdatedVehicle = {...myVehicle, ...updateMyVehicle}
+
+//   console.log(myUpdatedVehicle);
+
+//Rest operator
+
+
+// let arr = [1,2,3,4,5,6,7,9];
+
+
+// let [one,two,...rest] = arr;
+
+
+// console.log(rest);
+
+
+// const arrayOne = ['a', 'b', 'c'];
+// const arrayTwo = [1, 2, 3];
+// const arraysCombined = [
+// ...arrayOne,...arrayTwo
+// ];
+
+// console.log(arraysCombined);
+
+
+//event Bubbling
+
+document.getElementById('one').addEventListener('click',function (){
+    console.log("one");
+},false);
+document.getElementById('two').addEventListener('click',function (){
+    console.log("two");
+},false);
+document.getElementById('three').addEventListener('click',function (){
+    console.log("three");
+},false);
+document.getElementById('four').addEventListener('click',function (){
+    console.log("four");
+},false);
+
+
+// captureing
+
+document.getElementById('one').addEventListener('click',function (){
+    console.log("one");
+},true);
+document.getElementById('two').addEventListener('click',function (){
+    console.log("two");
+},true);
+document.getElementById('three').addEventListener('click',function (){
+    console.log("three");
+},true);
+document.getElementById('four').addEventListener('click',function (){
+    console.log("four");
+},true);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
